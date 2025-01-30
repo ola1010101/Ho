@@ -1,191 +1,204 @@
+
 #include <iostream>
 #include <string>
+
+
 int main()
 {
 	setlocale(LC_ALL, "ru");
 	srand(time(NULL));
-	int catalog = 0, acoptiment = 0, cymka = 0, chak = 0, cumka1 = 2500, cumka2 = 999999, cumka3 = 3, rukzak1 = 1000, rukzak2 = 4000, rukzak3 = 1, rukzak4 = 999999, rukzak5 = 5000, rukzak = 0, chemodan = 0, chemod1 = 5000, chemod2 = 4000, chemod3 = 999999, chemod4 = 1, ckidka = 0.1, itog = 0;
-	bool;
 
-	std::cout << "сумки МАКА, или Mакара\n";
-	std::cout << "хотите посмотреть асортимент? если да то 1 , если нет то 0 ";
-	std::cin >> acoptiment;
-	while (acoptiment == 1)
+
+int catalog = 0, acoptiment = 0, cymka = 0, chak = 0, cumka1 = 2500, cumka2 = 999999, cumka3 = 3, rukzak1 = 1000, rukzak2 = 4000, rukzak3 = 1, rukzak4 = 999999, rukzak5 = 5000, rukzak = 0, chemodan = 0, chemod1 = 5000, chemod2 = 4000, chemod3 = 999999, chemod4 = 1, ckidka = 0.1, itog = 0;
+
+std::cout << "сумки МАКА, или Mакара\n";
+std::cout << "хотите посмотреть асортимент? если да то 1 , если нет то 0 ";
+std::cin >> acoptiment;
+while (acoptiment == 1)
+{
+	std::cout << "выберите номер каталога который желаете посмотреть:\n 1. дамские сумки\n 2. рюкзаки\n 3. чемоданы \n ";
+	std::cin >> catalog;
+	if (catalog == 1)
 	{
-		std::cout << "выберите номер каталога который желаете посмотреть:\n 1. дамские сумки\n 2. рюкзаки\n 3. чемоданы \n ";
-		std::cin >> catalog;
-		if (catalog == 1)
+		std::cout << " асортимент каталога \"дамские сумки\":\n1.крутая сумка (цена " << cumka1 << " рублей)\n 2. элитная сумка (цена" << cumka2 << ")\n3.бомж - сумка(цена " << cumka3 << "3 рубля)\n ";
+		std::cin >> cymka;
+		if (cymka == 1)
 		{
-			std::cout << " асортимент каталога \"дамские сумки\":\n1.крутая сумка (цена " << cumka1 << " рублей)\n 2. элитная сумка (цена" << cumka2 << ")\n3.бомж - сумка(цена " << cumka3 << "3 рубля)\n ";
-			std::cin >> cymka;
-			if (cymka == 1)
-			{
-				chak = chak + cumka1;
-			}
-			if (cymka == 2)
-			{
-				chak = chak + cumka2;
-			}
-			if (cymka == 3)
-			{
-				chak = chak + cumka3;
-			}
+			chak = chak + cumka1;
 		}
-		else if (catalog == 2)
+		if (cymka == 2)
 		{
-			std::cout << " асортимент каталога \" рюкзаки\":\n 1. обычный рюкзак (цена " << rukzak1 << " рублей) \n 2. крутой рюкзак  (цена " << rukzak2 << " рублей) \n 3. бомж-рюкзак  (цена " << rukzak3 << " рублей) \n 4. элитный рюкзак  (цена " << rukzak4 << " рублей) \n 5. рюкзак дня  (цена " << rukzak5 << " рублей) \n";
-			std::cin >> rukzak;
-			if (rukzak == 1)
-			{
-				chak = chak + rukzak1;
-			}
-			if (rukzak == 2)
-			{
-				chak = chak + rukzak2;
-			}
-			if (rukzak == 3)
-			{
-				chak = chak + rukzak3;
-			}
-			if (rukzak == 4)
-			{
-				chak = chak + rukzak4;
-			}
-			if (rukzak == 5)
-			{
-				chak = chak + rukzak5;
-			}
+			chak = chak + cumka2;
+		}
+		if (cymka == 3)
+		{
+			chak = chak + cumka3;
+		}
+	}
+	else if (catalog == 2)
+	{
+		std::cout << " асортимент каталога \" рюкзаки\":\n 1. обычный рюкзак (цена " << rukzak1 << " рублей) \n 2. крутой рюкзак  (цена " << rukzak2 << " рублей) \n 3. бомж-рюкзак  (цена " << rukzak3 << " рублей) \n 4. элитный рюкзак  (цена " << rukzak4 << " рублей) \n 5. рюкзак дня  (цена " << rukzak5 << " рублей) \n";
+		std::cin >> rukzak;
+		if (rukzak == 1)
+		{
+			chak = chak + rukzak1;
+		}
+		if (rukzak == 2)
+		{
+			chak = chak + rukzak2;
+		}
+		if (rukzak == 3)
+		{
+			chak = chak + rukzak3;
+		}
+		if (rukzak == 4)
+		{
+			chak = chak + rukzak4;
+		}
+		if (rukzak == 5)
+		{
+			chak = chak + rukzak5;
+		}
+
+	}
+	else if (catalog == 3)
+	{
+		std::cout << " асортимент каталога \"чемодан\": \n 1. чемодан дня (цена " << chemod1 << " рублей) \n 2. крутой чемодан (цена " << chemod2 << " рублей) \n 3. элитный чкмодан (цена " << chemod3 << " рублей) \n 4. бомж-чемодан  (цена " << chemod4 << " рублей) \n";
+		std::cin >> chemodan;
+		if (chemodan == 1)
+		{
+			chak = chak + chemod1;
+		}
+		if (chemodan == 2)
+		{
+			chak = chak + chemod2;
 
 		}
+		if (chemodan == 3)
+		{
+			chak = chak + chemod3;
+		}
+		if (chemodan == 4)
+		{
+			chak = chak + chemod4;
+		}
+
+
+	}
+	std::cout << "хотите посмотреть асортимент ещё раз? если да то 1 , если нет то 0 \n Если хотите чтё-то убрать то 2\n";
+	std::cin >> acoptiment;
+
+
+
+
+	while (acoptiment == 2)
+	{
+
+
+		if (acoptiment == 2)
+		{
+			std::cout << "выберите номер каталога который желаете посмотреть:\n 1. дамские сумки\n 2. рюкзаки\n 3. чемоданы \n ";
+			std::cin >> catalog;
+
+			if (catalog == 1)
+			{
+				std::cout << " асортимент каталога \"дамские сумки\":\n1.крутая сумка (цена " << cumka1 << " рублей)\n 2. элитная сумка (цена" << cumka2 << ")\n3.бомж - сумка(цена " << cumka3 << "3 рубля)\n ";
+				std::cin >> cymka;
+				if (cymka == 1)
+				{
+					chak = chak - cumka1;
+				}
+				if (cymka == 2)
+				{
+					chak = chak - cumka2;
+				}
+				if (cymka == 3)
+				{
+					chak = chak - cumka3;
+				}
+			}
+			else if (catalog == 2)
+			{
+				std::cout << " асортимент каталога \" рюкзаки\":\n 1. обычный рюкзак (цена " << rukzak1 << " рублей) \n 2. крутой рюкзак  (цена " << rukzak2 << " рублей) \n 3. бомж-рюкзак  (цена " << rukzak3 << " рублей) \n 4. элитный рюкзак  (цена " << rukzak4 << " рублей) \n 5. рюкзак дня  (цена " << rukzak5 << " рублей) \n";
+				std::cin >> rukzak;
+				if (rukzak == 1)
+				{
+					chak = chak - rukzak1;
+				}
+				if (rukzak == 2)
+				{
+					chak = chak - rukzak2;
+				}
+				if (rukzak == 3)
+				{
+					chak = chak - rukzak3;
+				}
+				if (rukzak == 4)
+				{
+					chak = chak - rukzak4;
+				}
+				if (rukzak == 5)
+				{
+					chak = chak - rukzak5;
+				}
+
+			}
 			else if (catalog == 3)
 			{
 				std::cout << " асортимент каталога \"чемодан\": \n 1. чемодан дня (цена " << chemod1 << " рублей) \n 2. крутой чемодан (цена " << chemod2 << " рублей) \n 3. элитный чкмодан (цена " << chemod3 << " рублей) \n 4. бомж-чемодан  (цена " << chemod4 << " рублей) \n";
 				std::cin >> chemodan;
 				if (chemodan == 1)
 				{
-					chak = chak + chemod1;
+					chak = chak - chemod1;
 				}
 				if (chemodan == 2)
 				{
-					chak = chak + chemod2;
+					chak = chak - chemod2;
 
 				}
 				if (chemodan == 3)
 				{
-					chak = chak + chemod3;
+					chak = chak - chemod3;
 				}
 				if (chemodan == 4)
 				{
-					chak = chak + chemod4;
+					chak = chak - chemod4;
 				}
 
-			
+
 			}
-		
-
-			
-				if (acoptiment == 2)
-				{
-					std::cout << "выберите номер каталога который желаете посмотреть:\n 1. дамские сумки\n 2. рюкзаки\n 3. чемоданы \n ";
-					std::cin >> catalog;
-
-					if (catalog == 1)
-					{
-						std::cout << " асортимент каталога \"дамские сумки\":\n1.крутая сумка (цена " << cumka1 << " рублей)\n 2. элитная сумка (цена" << cumka2 << ")\n3.бомж - сумка(цена " << cumka3 << "3 рубля)\n ";
-						std::cin >> cymka;
-						if (cymka == 1)
-						{
-							chak = chak - cumka1;
-						}
-						if (cymka == 2)
-						{
-							chak = chak - cumka2;
-						}
-						if (cymka == 3)
-						{
-							chak = chak - cumka3;
-						}
-					}
-					else if (catalog == 2)
-					{
-						std::cout << " асортимент каталога \" рюкзаки\":\n 1. обычный рюкзак (цена " << rukzak1 << " рублей) \n 2. крутой рюкзак  (цена " << rukzak2 << " рублей) \n 3. бомж-рюкзак  (цена " << rukzak3 << " рублей) \n 4. элитный рюкзак  (цена " << rukzak4 << " рублей) \n 5. рюкзак дня  (цена " << rukzak5 << " рублей) \n";
-						std::cin >> rukzak;
-						if (rukzak == 1)
-						{
-							chak = chak - rukzak1;
-						}
-						if (rukzak == 2)
-						{
-							chak = chak - rukzak2;
-						}
-						if (rukzak == 3)
-						{
-							chak = chak - rukzak3;
-						}
-						if (rukzak == 4)
-						{
-							chak = chak - rukzak4;
-						}
-						if (rukzak == 5)
-						{
-							chak = chak - rukzak5;
-						}
-
-					}
-					else if (catalog == 3)
-					{
-						std::cout << " асортимент каталога \"чемодан\": \n 1. чемодан дня (цена " << chemod1 << " рублей) \n 2. крутой чемодан (цена " << chemod2 << " рублей) \n 3. элитный чкмодан (цена " << chemod3 << " рублей) \n 4. бомж-чемодан  (цена " << chemod4 << " рублей) \n";
-						std::cin >> chemodan;
-						if (chemodan == 1)
-						{
-							chak = chak - chemod1;
-						}
-						if (chemodan == 2)
-						{
-							chak = chak - chemod2;
-
-						}
-						if (chemodan == 3)
-						{
-							chak = chak - chemod3;
-						}
-						if (chemodan == 4)
-						{
-							chak = chak - chemod4;
-						}
-
-
-					}
 
 
 
 
 
-				}
-				std::cout << "хотите посмотреть асортимент ещё раз? если да то 1 , если нет то 0 \n Если хотите чтё-то убрать то 2\n";
-				std::cin >> acoptiment;
+		}
+		std::cout << "хотите посмотреть асортимент ещё раз? если да то 1 , если нет то 0 \n Если хотите чтё-то убрать то 2\n";
+		std::cin >> acoptiment;
 
 	}
-
-
-
-
-
-	if (chak == 10500)
-	{
-		std::cout << " поздравляю в собрали весь крутой сет";
-	}
-	if (chak == 1000000)
-	{
-		std::cout << " поздравляю в собрали сет: элтный бомж ";
-	}
-	std::cout << " ваш чек вышел " << chak << "рублей\n";
-
-	if (chak >=10000)
-	{
-		itog = chak-chak * ckidka;
-		std::cout << " ваш чек с учётом скидки шел " << itog << "рублей\n";
-	}
-	return 0;
 }
-				
+
+
+
+
+if (chak == 10500)
+{
+	std::cout << " поздравляю в собрали весь крутой сет";
+}
+if (chak == 1000000)
+{
+	std::cout << " поздравляю в собрали сет: элтный бомж ";
+}
+std::cout << " ваш чек вышел " << chak << "рублей\n";
+
+if (chak >= 10000)
+{
+	itog = chak - (chak * ckidka);
+	std::cout << " ваш чек с учётом скидки шел " << itog << "рублей\n";
+}
+
+return 0; 
+
+
+}
