@@ -1,0 +1,84 @@
+#include <iostream> 
+
+float average(int arr[], int len)
+{
+    float sum = 0;
+    for (int i = 0; i < len; i++)
+    {
+        sum += arr[i];
+    }
+    return sum / len;
+}
+
+
+
+
+void Print(int arr, int std) {
+    int plus = 0;
+    int minus = 0;
+    int zero = 0;
+    for (int i = 0; i < std; i++)
+    {
+        if (arr[i] > 0)
+        {
+            plus++;
+        }
+        else if (arr[i] < 0)
+        {
+            minus++;
+        }
+        else {
+            zero++;
+        }
+    }
+    std::cout << "The number of positive elements = " << plus << "\n";
+    std::cout << "The number of negative elements = " << minus << "\n";
+    std::cout << "The number of zero elements = " << zero << "\n";
+}
+
+int countingArray(float list[], int size, bool)
+{
+    int NumberOfPositives = 0;
+    int NumberOfNegatives = 0;
+    for (int index = 0; index < size; index++) {
+        if (list[index] > 0) {
+            if (true) {
+                NumberOfPositives++;
+            }
+        }
+        else if (list[index] < 0) {
+            if (false) {
+                NumberOfNegatives++;
+            }
+        }
+        else if (list[index] == 0)
+            continue;
+    }
+    return NumberOfPositives;
+    return NumberOfNegatives;
+}
+int main()
+{
+    // çàäà÷à 2
+    int arr[] = { 1, 2, 3, 4, 5 };
+    int len = sizeof(arr) / sizeof(arr[0]);
+    std::cout << average(arr, len);
+    return 0;
+
+
+
+
+
+    // çàäà÷à 3
+
+    float list[] = { -1, 2, -3, 4.5, 0, -3, -999.99 };
+
+    std::cout << "# of Pos. = " << countingArray(list, 7, true) << "\n";
+    std::cout << "# of Pos. = " << countingArray(list, 7, false) << "\n";
+
+    system("PAUSE");
+
+
+
+    return 0;
+}
