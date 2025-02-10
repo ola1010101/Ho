@@ -1,204 +1,170 @@
+#include<iostream>
+#include<cstdlib>
 
-#include <iostream>
-#include <string>
+
 
 
 int main()
 {
 	setlocale(LC_ALL, "ru");
-	srand(time(NULL));
 
+	std::cout << "			Çàäà÷à 1";
 
-int catalog = 0, acoptiment = 0, cymka = 0, chak = 0, cumka1 = 2500, cumka2 = 999999, cumka3 = 3, rukzak1 = 1000, rukzak2 = 4000, rukzak3 = 1, rukzak4 = 999999, rukzak5 = 5000, rukzak = 0, chemodan = 0, chemod1 = 5000, chemod2 = 4000, chemod3 = 999999, chemod4 = 1, ckidka = 0.1, itog = 0;
-
-std::cout << "сумки МАКА, или Mакара\n";
-std::cout << "хотите посмотреть асортимент? если да то 1 , если нет то 0 ";
-std::cin >> acoptiment;
-while (acoptiment == 1)
-{
-	std::cout << "выберите номер каталога который желаете посмотреть:\n 1. дамские сумки\n 2. рюкзаки\n 3. чемоданы \n ";
-	std::cin >> catalog;
-	if (catalog == 1)
-	{
-		std::cout << " асортимент каталога \"дамские сумки\":\n1.крутая сумка (цена " << cumka1 << " рублей)\n 2. элитная сумка (цена" << cumka2 << ")\n3.бомж - сумка(цена " << cumka3 << "3 рубля)\n ";
-		std::cin >> cymka;
-		if (cymka == 1)
-		{
-			chak = chak + cumka1;
-		}
-		if (cymka == 2)
-		{
-			chak = chak + cumka2;
-		}
-		if (cymka == 3)
-		{
-			chak = chak + cumka3;
-		}
-	}
-	else if (catalog == 2)
-	{
-		std::cout << " асортимент каталога \" рюкзаки\":\n 1. обычный рюкзак (цена " << rukzak1 << " рублей) \n 2. крутой рюкзак  (цена " << rukzak2 << " рублей) \n 3. бомж-рюкзак  (цена " << rukzak3 << " рублей) \n 4. элитный рюкзак  (цена " << rukzak4 << " рублей) \n 5. рюкзак дня  (цена " << rukzak5 << " рублей) \n";
-		std::cin >> rukzak;
-		if (rukzak == 1)
-		{
-			chak = chak + rukzak1;
-		}
-		if (rukzak == 2)
-		{
-			chak = chak + rukzak2;
-		}
-		if (rukzak == 3)
-		{
-			chak = chak + rukzak3;
-		}
-		if (rukzak == 4)
-		{
-			chak = chak + rukzak4;
-		}
-		if (rukzak == 5)
-		{
-			chak = chak + rukzak5;
-		}
-
-	}
-	else if (catalog == 3)
-	{
-		std::cout << " асортимент каталога \"чемодан\": \n 1. чемодан дня (цена " << chemod1 << " рублей) \n 2. крутой чемодан (цена " << chemod2 << " рублей) \n 3. элитный чкмодан (цена " << chemod3 << " рублей) \n 4. бомж-чемодан  (цена " << chemod4 << " рублей) \n";
-		std::cin >> chemodan;
-		if (chemodan == 1)
-		{
-			chak = chak + chemod1;
-		}
-		if (chemodan == 2)
-		{
-			chak = chak + chemod2;
-
-		}
-		if (chemodan == 3)
-		{
-			chak = chak + chemod3;
-		}
-		if (chemodan == 4)
-		{
-			chak = chak + chemod4;
-		}
-
-
-	}
-	std::cout << "хотите посмотреть асортимент ещё раз? если да то 1 , если нет то 0 \n Если хотите чтё-то убрать то 2\n";
-	std::cin >> acoptiment;
+    int arr[5];
+    for (int i = 0; i < 5; i++)
+    {
+        std::cin >> arr[i];
+    }
+    int max = arr[0];
+    int min = arr[0];
+    for (int i = 0; i < 5; i++)
+    {
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+        if (arr[i] < min)
+        {
+            min = arr[i];
+        }
+    }
+    std::cout << "\n" << "Max: " << max << "\n" << "Min: " << min;
+    system("pause");
 
 
 
-
-	while (acoptiment == 2)
-	{
+    system("cls");
 
 
-		if (acoptiment == 2)
-		{
-			std::cout << "выберите номер каталога который желаете посмотреть:\n 1. дамские сумки\n 2. рюкзаки\n 3. чемоданы \n ";
-			std::cin >> catalog;
-
-			if (catalog == 1)
-			{
-				std::cout << " асортимент каталога \"дамские сумки\":\n1.крутая сумка (цена " << cumka1 << " рублей)\n 2. элитная сумка (цена" << cumka2 << ")\n3.бомж - сумка(цена " << cumka3 << "3 рубля)\n ";
-				std::cin >> cymka;
-				if (cymka == 1)
-				{
-					chak = chak - cumka1;
-				}
-				if (cymka == 2)
-				{
-					chak = chak - cumka2;
-				}
-				if (cymka == 3)
-				{
-					chak = chak - cumka3;
-				}
-			}
-			else if (catalog == 2)
-			{
-				std::cout << " асортимент каталога \" рюкзаки\":\n 1. обычный рюкзак (цена " << rukzak1 << " рублей) \n 2. крутой рюкзак  (цена " << rukzak2 << " рублей) \n 3. бомж-рюкзак  (цена " << rukzak3 << " рублей) \n 4. элитный рюкзак  (цена " << rukzak4 << " рублей) \n 5. рюкзак дня  (цена " << rukzak5 << " рублей) \n";
-				std::cin >> rukzak;
-				if (rukzak == 1)
-				{
-					chak = chak - rukzak1;
-				}
-				if (rukzak == 2)
-				{
-					chak = chak - rukzak2;
-				}
-				if (rukzak == 3)
-				{
-					chak = chak - rukzak3;
-				}
-				if (rukzak == 4)
-				{
-					chak = chak - rukzak4;
-				}
-				if (rukzak == 5)
-				{
-					chak = chak - rukzak5;
-				}
-
-			}
-			else if (catalog == 3)
-			{
-				std::cout << " асортимент каталога \"чемодан\": \n 1. чемодан дня (цена " << chemod1 << " рублей) \n 2. крутой чемодан (цена " << chemod2 << " рублей) \n 3. элитный чкмодан (цена " << chemod3 << " рублей) \n 4. бомж-чемодан  (цена " << chemod4 << " рублей) \n";
-				std::cin >> chemodan;
-				if (chemodan == 1)
-				{
-					chak = chak - chemod1;
-				}
-				if (chemodan == 2)
-				{
-					chak = chak - chemod2;
-
-				}
-				if (chemodan == 3)
-				{
-					chak = chak - chemod3;
-				}
-				if (chemodan == 4)
-				{
-					chak = chak - chemod4;
-				}
+    std::cout << "            Çàäà÷à 2";//å¸ ÿ ÷åòî íå îñîáî ïîíÿëà,ñäåëàëà êàê ïîíÿëà
 
 
-			}
+    srand(time(NULL));
+    int ar[10];
+    std::cout << "\n"<<"Îãðàíè÷åíèå(äî 10) : ";
+    int n, sum = 0;
+    std::cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        ar[i] = rand() % 10+1;
+    }
+    for (int i = 0;i < n;i++)
+    {
+        std::cout << ar[i] << "\t";
+    }
+    std::cout << "\n";
+    int one, two;
+    std::cout << "one = ";
+    std::cin >> one;
+    std::cout << "two = ";
+    std::cin >> two;
+    for (int i = 0; i < n; i++) {
+        if (ar[i] < one)
+        {
+            sum += ar[i];
+        }
+        if (ar[i] > two)
+        {
+            sum += ar[i];
+        }
+    }
+
+    std::cout << sum;
+    system("pause");
+    system("cls");
+
+    std::cout << "        Çàäà÷à 3";
 
 
 
+    const int month{ 12 }; 
+    int income[month]{ 1,2,3,4,5,6,7,8,9,10,11,12 }; 
+    int monthStart{ 0 }; 
+    int monthEnd{ 0 }; 
 
+    for (int i{ 0 }; i < month; ++i)
+    {
+        std::cout << "Äîõîä çà: ";
 
-		}
-		std::cout << "хотите посмотреть асортимент ещё раз? если да то 1 , если нет то 0 \n Если хотите чтё-то убрать то 2\n";
-		std::cin >> acoptiment;
+        if (i == 0) 
+        { 
+            std::cout <<"\n" << "January: "; 
+        }
+        else if (i == 1) 
+        { 
+            std::cout << "February: "; 
+        }
+        else if (i == 2) 
+        { 
+            std::cout << "March: "; 
+        }
+        else if (i == 3) 
+        { 
+            std::cout << "April: ";
+        }
+        else if (i == 4)
+        { 
+            std::cout << "May: ";
+        }
+        else if (i == 5) 
+        { 
+            std::cout << "June: "; 
+        }
+        else if (i == 6)
+        { 
+            std::cout << "July: ";
+        }
+        else if (i == 7)
+        { 
+            std::cout << "August: ";
+        }
+        else if (i == 8) 
+        { 
+            std::cout << "September: "; 
+        }
+        else if (i == 9) 
+        { 
+            std::cout << "October: ";
+        }
+        else if (i == 10) 
+        { 
+            std::cout << "November: ";
+        }
+        else 
+        { 
+            std::cout << "December: ";
+        }
 
-	}
-}
+        std::cin >> income[i];
+    }
+    std::cout << "\nÂâåäèòå äèàïàçîí çà êîòîðûé âû áû õîòåëè ïîñìîòðåòü äîõîä:\n";
+    std::cout << "Ââåäèòå ïåðâûé ìåñÿö: ";
+    std::cin >> monthStart;
+    std::cout << "Ââåäèòå ïîñëåäíèé ìåñÿö: ";
+    std::cin >> monthEnd;
 
+    
 
+    monthStart--; 
 
+    int maxI{ monthStart }; 
+    int minI{ monthStart };
 
-if (chak == 10500)
-{
-	std::cout << " поздравляю в собрали весь крутой сет";
-}
-if (chak == 1000000)
-{
-	std::cout << " поздравляю в собрали сет: элтный бомж ";
-}
-std::cout << " ваш чек вышел " << chak << "рублей\n";
+    for (int i{ monthStart }; i < monthEnd; ++i)
+    {
 
-if (chak >= 10000)
-{
-	itog = chak - (chak * ckidka);
-	std::cout << " ваш чек с учётом скидки шел " << itog << "рублей\n";
-}
+        if (income[i] > income[maxI])
+        {
+            maxI = i;
+        }
+        else if (income[i] < income[minI])
+        {
+            minI = i;
+        }
+    }
 
-return 0; 
+    std::cout << "\nÌèíèìóì: " << minI + 1 << '\n'; 
+    std::cout << "Ìàêñèìóì: " << maxI + 1 << '\n';
 
-
+    return 0;
 }
