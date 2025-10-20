@@ -1,0 +1,137 @@
+#include<iostream>
+#include<string>
+#include<Windows.h>
+
+
+class Integer
+{
+public:
+	//какой-то код
+	int pub1, number, other;
+	void bar1(){}
+
+	//способы создания обьектов
+	Integer():Integer(false,0u){ }
+	Integer(bool sign, unsigned units):sign(sign),units(units){ }
+	Integer(int number)
+	{
+		if (number < 0) {
+			sign = true;
+			units = ::abs(number);
+		}
+		else {
+			sign = false; 
+			units = static_cast<unsigned>(number);
+		}
+	}
+
+
+
+	//=====================================================================================================================
+	Integer Sum()const
+	{
+		return number + other;
+	}
+	Integer difference()const
+	{
+		return number - other;
+	}
+	Integer product()const
+	{
+		return number * other;
+	}
+	double qoutient()const
+	{
+		if(other == 0)
+		{
+			return 0.0;
+		}
+		return number / other;
+	}
+
+	int tolnt()const
+	{
+		return number;
+	}
+
+	bool IsDivisible(int divisor)const
+	{
+		if (divisor == 0)
+		{
+			return false;
+		}
+		return number % divisor == 0;
+	}
+
+	// наибольший делитель
+	Integer largest() const
+	{
+		int a = (number < 0) ? -number : number;
+		int b = (other < 0) ? -other : other;
+
+		while (b != 0)
+		{
+			int c = b;
+			b = a % b;
+			a = c;
+		}
+		return a;
+	}
+
+	// наименьший кратный
+	Integer smallest() const
+	{
+		if (number == 0 || other == 0) return 0;
+		int a = (number < 0) ? -number : number;
+		int b = (other < 0) ? -other : other;
+		return (a / largest()) * b;
+	}
+
+	//=====================================================================================================================
+
+	//способы обработки обьектов
+	void setSign(bool sign) {
+		this->sign = sign;
+	}
+	void setUnits(unsigned units) {
+		this->units = units;
+	}
+	bool getSing()const {
+		return sign;
+	}
+	unsigned getUnits()const {
+		return units;
+	}
+	//способы проверки состиояния обьектов
+	bool isOdd()const {
+		return bool(units % 2);
+	}
+	bool isPositive()const {
+		return !sign;
+	}
+	//перезагрузки операторов
+
+protected:
+	//какой-то код
+	int pub2;
+	void bar2(){}
+
+private:
+	//какой-то код
+	int pub3;
+	void bar3() {}
+	//поля данных и методы не для пользоватля
+	bool sign;
+	unsigned units;
+
+
+};
+int main()
+{
+	Integer num1(14);
+	Integer num2(18);
+	Integer ofher = num2.Sum(num1);
+
+	return 0;
+
+}
